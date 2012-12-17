@@ -1228,7 +1228,7 @@ ifneq ($(TARGET_CUSTOM_RELEASETOOL),)
         @echo "Running releasetool"
         $(hide) $(TARGET_CUSTOM_RELEASETOOL)
 else
-	$(hide) ./vendor/aosp/tools/squisher
+	$(hide) ./vendor/pcf/tools/squisher
 endif
 
 # -----------------------------------------------------------------
