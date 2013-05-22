@@ -48,6 +48,9 @@ $(combo_target)HAVE_KERNEL_MODULES := 0
 
 $(combo_target)GLOBAL_CFLAGS := -fno-exceptions -Wno-multichar
 $(combo_target)RELEASE_CFLAGS := -O2 -g -fno-strict-aliasing
+ifeq ($(DEBUG_NO_STRICT_ALIASING),yes)
+  $(combo_target)RELEASE_CFLAGS += -fno-strict-aliasing -Wno-error=strict-aliasing
+endif
 $(combo_target)GLOBAL_LDFLAGS :=
 $(combo_target)GLOBAL_ARFLAGS := crsP
 

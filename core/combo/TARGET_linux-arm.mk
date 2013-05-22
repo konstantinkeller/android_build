@@ -84,6 +84,10 @@ else
 TARGET_thumb_CFLAGS := $(TARGET_arm_CFLAGS)
 endif
 
+ifeq ($(DEBUG_NO_STRICT_ALIASING),yes)
+  TARGET_arm_CFLAGS += -fno-strict-aliasing -Wno-error=strict-aliasing
+  TARGET_thumb_CFLAGS += -fno-strict-aliasing -Wno-error=strict-aliasing
+endif
 # Set FORCE_ARM_DEBUGGING to "true" in your buildspec.mk
 # or in your environment to force a full arm build, even for
 # files that are normally built as thumb; this can make
